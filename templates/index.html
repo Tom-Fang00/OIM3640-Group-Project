@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Page for Final Project</title>
+    <style>
+      .container {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      body {
+        background: rgb(83, 83, 83);
+        color: #fff;
+        margin: 0;
+      }
+      img {
+        margin:auto;
+        display:flex;
+        text-align:center;
+        width:40;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meal Finder</h1>
+      <div>
+        <form method="post">
+          Please Select Category (Optional)
+          <select id="category" name="category">
+            <option value=""></option>
+            <option value="Beef">Beef</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Goat">Goat</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Pork">Pork</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Side">Side</option>
+            <option value="Starter">Starter</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Vegetarian">Vegetarian</option>
+          </select>
+          <br />
+          <br />
+          Please Select Region (Optional)
+          <select id="area" name="area">
+            <option value=""></option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Croatian">Croatian</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Egyptian">Egyptian</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Jamaican">Jamaican</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Kenyan">Kenyan</option>
+            <option value="Malaysian">Malaysian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Moroccan">Moroccan</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Tunisian">Tunisian</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Unknown">Unknown</option>
+            <option value="Vietnamese">Vietnamese</option>
+          </select>
+          <div>
+            Enter one main ingredient:
+            <br />
+            <textarea rows="4" cols="50" name="ingredient"> </textarea>
+          </div>
+          <button type="submit" id="generate">Generate</button>
+          <button type="submit" id="randomize">Randomize</button>
+        </form>
+        Chosen category is {{category}}
+        <br />
+        Chosen area is {{area}}
+        <br />
+        Chosen ingredient is {{ingredients}}
+        <br/>
+        <h1>The Randomly generated food is {{foodName}}</h1>
+      </div>
+    </div>
+    <div id="result">
+      <img src={{imageId}}  title="recipeImg" id="image" />
+    </div>
+
+  </body>
+</html>
