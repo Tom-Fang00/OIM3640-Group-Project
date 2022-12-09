@@ -25,6 +25,9 @@
         text-align: center;
         width: 40;
       }
+      .instruction{
+        margin:auto;
+      }
     </style>
   </head>
   <body>
@@ -32,9 +35,8 @@
       <h1>Meal Finder</h1>
       <div>
         <form method="post">
-          Please Select Category (Optional)
+          Please Select Category
           <select id="category" name="category">
-            <option value=""></option>
             <option value="Beef">Beef</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Chicken">Chicken</option>
@@ -51,9 +53,8 @@
           </select>
           <br />
           <br />
-          Please Select Region (Optional)
+          Please Select Region 
           <select id="area" name="area">
-            <option value=""></option>
             <option value="American">American</option>
             <option value="British">British</option>
             <option value="Canadian">Canadian</option>
@@ -83,9 +84,9 @@
             <option value="Vietnamese">Vietnamese</option>
           </select>
           <div>
-            Enter one main ingredient:
+            Enter one main ingredient, Capitalize first letter:
             <br />
-            <textarea rows="4" cols="50" name="text"> </textarea>
+            <input type="text" id="ingredient" name="ingredient" value=""> 
           </div>
           <button type="submit" id="generate">Generate</button>
         </form>
@@ -93,13 +94,16 @@
         <br />
         Chosen area is {{area}}
         <br />
-        Chosen ingredient is {{ingredients}}
+        Chosen ingredient is {{ingredient}}
         <br />
         <h1>The Randomly generated food is {{foodName}}</h1>
       </div>
     </div>
     <div id="result">
       <img src="{{imageId}}" title="recipeImg" id="image" />
+    </div>
+    <div id="instruction">
+      Instruction: Please input all three variables to generate a meal recommendation. All three fields must be filled. For the ingredient area, common input include Salt, Sugar and Beef. Please Capitalize first letter. For testing purpose, entering "Chicken American Salt" will likely to generate either: French Onion Chicken, Chick-Fil-A Sandwich, or Kentucky Fried Chicken. If the result is a 404 not found image, please try another input, since there might not be suited results from our database.
     </div>
   </body>
 </html>
