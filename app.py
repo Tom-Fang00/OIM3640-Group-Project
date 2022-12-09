@@ -10,7 +10,7 @@ def search():
     if request.method == "POST":
         category = request.form.get('category')
         area = request.form.get('area')
-        ingredient = request.form['ingredient']
+        ingredient = format(request.form['text'])
         food = fetch(category, area, ingredient)
         imageId = food[0]
         foodName = food[1]

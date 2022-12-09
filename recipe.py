@@ -111,14 +111,14 @@ def fetch(category, area, ingredient):
     Variable final contains all matched recipes' ID.
     '''
     # print(final)
-    
+
     finalUrl = list()
     for x in final:
         finalX = ('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+x)
         finalUrl.append(finalX)
     randomRecipe = random.choice(finalUrl)
     responseFinal = requests.request("GET", randomRecipe).json()
-    # pprint.pprint(responseFinal)
+    pprint.pprint(responseFinal)
     recipeList = (responseFinal['meals'])
     recipeDict = dict()
     for x in recipeList:
