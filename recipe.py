@@ -81,6 +81,9 @@ def fetch(category, area, ingredient):
     cList.sort()
     aList.sort()
     iList.sort()
+
+
+
     final = list()
 
     if bool(cList) == False:
@@ -118,6 +121,7 @@ def fetch(category, area, ingredient):
         finalUrl.append(finalX)
 
     if not finalUrl:
+        print("Please try again")
         return ["https://lh6.googleusercontent.com/Bu-pRqU_tWZV7O3rJ5nV1P6NjqFnnAs8kVLC5VGz_Kf7ws0nDUXoGTc7pP87tyUCfu8VyXi0YviIm7CxAISDr2lJSwWwXQxxz98qxVfMcKTJfLPqbcfhn-QEeOowjrlwX1LYDFJN","Not Found"]
     else:
         randomRecipe = random.choice(finalUrl)
