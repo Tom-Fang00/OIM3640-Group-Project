@@ -42,7 +42,7 @@ responseIngredient = requests.request("GET", urlIngredient).json()
 ingredientList = list()
 for i in responseIngredient['meals']:
     ingredientList.append(i['strIngredient'])
-# print(ingredientList)
+print(ingredientList)
 
 c = "Chicken"
 a = "American"
@@ -116,18 +116,22 @@ def fetch(category, area, ingredient):
     for x in final:
         finalX = ('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+x)
         finalUrl.append(finalX)
-    randomRecipe = random.choice(finalUrl)
-    responseFinal = requests.request("GET", randomRecipe).json()
-    # pprint.pprint(responseFinal)
-    recipeList = (responseFinal['meals'])
-    recipeDict = dict()
-    for x in recipeList:
-        recipeDict = dict(x)
-        # pprint.pprint(x)
-    foodImg = str(recipeDict['strMealThumb'])
-    foodName = str(recipeDict['strMeal'])
-    food = [foodImg, foodName]
-    return food
+
+    if not finalUrl:
+        return ["https://lh6.googleusercontent.com/Bu-pRqU_tWZV7O3rJ5nV1P6NjqFnnAs8kVLC5VGz_Kf7ws0nDUXoGTc7pP87tyUCfu8VyXi0YviIm7CxAISDr2lJSwWwXQxxz98qxVfMcKTJfLPqbcfhn-QEeOowjrlwX1LYDFJN","Not Found"]
+    else:
+        randomRecipe = random.choice(finalUrl)
+        responseFinal = requests.request("GET", randomRecipe).json()
+        # pprint.pprint(responseFinal)
+        recipeList = (responseFinal['meals'])
+        recipeDict = dict()
+        for x in recipeList:
+            recipeDict = dict(x)
+            # pprint.pprint(x)
+        foodImg = str(recipeDict['strMealThumb'])
+        foodName = str(recipeDict['strMeal'])
+        food = [foodImg, foodName]
+        return food
 
 
-print(fetch(c,a,i))
+print(fetch("","",i))

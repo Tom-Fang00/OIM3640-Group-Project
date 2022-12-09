@@ -85,7 +85,8 @@
           <div>
             Enter one main ingredient:
             <br />
-            <textarea rows="4" cols="50" name="ingredient"> </textarea>
+            <input type="text" id="ingredient" name="ingredient" value=""> 
+            <!-- <textarea rows="4" cols="50" name="ingredient"> </textarea> -->
           </div>
           <button type="submit" id="generate">Generate</button>
           <button type="submit" id="randomize">Randomize</button>
@@ -94,7 +95,7 @@
         <br />
         Chosen area is {{area}}
         <br />
-        Chosen ingredient is {{ingredients}}
+        Chosen ingredient is {{ingredient}}
         <br/>
         <h1>The Randomly generated food is {{foodName}}</h1>
       </div>
